@@ -1,0 +1,17 @@
+html[data-theme='dark'] {
+  --primary-color: #121212;
+  --secondary-color: #1a1818;
+  --primary-grey: #575757;
+  --accent: #9b4b4b;
+  --text-color: #ffffff;
+  --theme-icon: url('./assets/icons/darkIcon.svg');
+}
+
+html[data-theme='light'] {
+  --primary-color: #ffffff;
+  --secondary-color: #fcfcfc;
+  --primary-grey: #dedede;
+  --accent: #ab8956;
+  --text-color: #121212;
+  --theme-icon: url('./assets/icons/lightIcon.svg');
+}
