@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "commonjs",
-  "homepage": "https://v1nn1g2a.github.io/pictureGallery/",
+  "homepage": "https://v1nn1g2a.github.io/pictureGallery",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
