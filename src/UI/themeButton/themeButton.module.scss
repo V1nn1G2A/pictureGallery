@@ -1,0 +1,15 @@
+.themeButton {
+  position: relative;
+  padding: 20px;
+  background-color: var(--secondary-color);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  outline: none;
+  background-image: var(--theme-icon);
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: 24px;
+  transition: background-color 0.3s ease-in-out;
+  transition: background-image 0.3s ease-in-out;
+}

@@ -1,0 +1,154 @@
+.sorted {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  right: 0;
+  transform: translateX(100%);
+  width: 87.5%;
+  max-width: 492px;
+  height: 100vh;
+  z-index: 1000;
+  background-color: var(--primary-color);
+  transition: transform 1s ease-in-out, width 0.3s ease-in-out;
+
+  &_close {
+    padding: 10px;
+    width: 5%;
+    margin: 52px 103px 93px auto;
+    background-color: var(--primary-color);
+    border: none;
+    outline: none;
+    cursor: pointer;
+
+    &_svg {
+      fill: var(--light-grey);
+    }
+  }
+
+  &_wrapper {
+    max-width: 320px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    margin: 0 0 1px 40px;
+
+    &:last-child {
+      flex-direction: row;
+      justify-content: space-between;
+      margin-left: 40px;
+      position: absolute;
+      top: 71.2vh;
+    }
+  }
+
+  &_result,
+  &_clear {
+    font-size: 12px;
+    font-weight: 700;
+    text-decoration: underline;
+    padding: 0;
+    background-color: var(--primary-color);
+    border: none;
+    outline: none;
+    cursor: pointer;
+  }
+
+  &_result {
+    color: var(--light-grey);
+
+    &:hover,
+    &:focus {
+      color: var(--primary-color-reverse);
+    }
+
+    &:disabled {
+      color: var(--secondary-grey);
+    }
+  }
+
+  &_clear {
+    color: var(--secondary-grey);
+
+    &:hover,
+    &:focus {
+      color: var(--primary-color-reverse);
+    }
+  }
+
+  &_error {
+    color: #9c9c9c;
+    border: none;
+    outline: none;
+    font-size: 14px;
+    font-family: "Inter-ExtraLight";
+    line-height: 19.6px;
+    margin: 10px 0 0 40px;
+  }
+}
+
+.active {
+  transform: translateX(0);
+  display: flex;
+  transition: all 1s ease-in-out;
+}
+
+@media (max-width: 1440px) {
+  .sorted {
+    max-width: 492px;
+  }
+}
+
+@media (max-width: 768px) {
+  .sorted {
+    max-width: 372px;
+
+    &_close {
+      margin: 12px 32px 130px auto;
+    }
+
+    &_wrapper {
+      margin: 0 20px 1px 32px;
+
+      &:last-child {
+        top: 83.5vh;
+        margin-left: 30px;
+      }
+    }
+  }
+}
+
+@media (max-width: 624px) {
+  .sorted {
+    max-width: 344px;
+
+    &_wrapper {
+      max-width: 280px;
+    }
+  }
+}
+
+@media (max-width: 392px) {
+  .sorted {
+    max-width: 280px;
+
+    &_close {
+      margin: 12px 28px 74px auto;
+    }
+
+    &_wrapper {
+      max-width: 240px;
+      margin: 0 20px 0 20px;
+
+      &:last-child {
+        top: 82vh;
+        margin-left: 20px;
+      }
+    }
+
+    &_error {
+      font-size: 12px;
+    }
+  }
+}

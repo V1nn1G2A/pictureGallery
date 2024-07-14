@@ -1,0 +1,40 @@
+.showButton {
+  background-color: var(--primary-color);
+
+  border: none;
+  outline: none;
+
+  margin: -2px 13px 0 0;
+  display: flex;
+  align-items: center;
+
+  cursor: pointer;
+
+  &_svg {
+    fill: var(--light-grey);
+    position: absolute;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  &_top {
+    margin-right: -16px;
+    transform: rotate(90deg);
+
+    &_active {
+      transform: rotate(0deg);
+    }
+  }
+}
+
+@media (max-width: 392px) {
+  .showButton {
+    &_svg {
+      width: 12px;
+      right: 20px;
+    }
+
+    &_top {
+      margin-right: 0;
+    }
+  }
+}

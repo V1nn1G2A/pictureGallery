@@ -1,0 +1,98 @@
+.pagination {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  margin-top: 40px;
+
+  &_item {
+    color: var(--light-grey);
+    font-size: 16px;
+    cursor: pointer;
+    box-sizing: border-box;
+    border: 1px solid var(--primary-color);
+    transition: border 0.3s ease-in-out;
+
+    &:first-child,
+    &:last-child {
+      margin: 0px 15px;
+      border: 1px solid var(--primary-color);
+      border-radius: 4px;
+      background-color: var(--primary-color);
+      transition: background-color 0.3s ease-in-out;
+
+      &:hover {
+        border: 1px solid var(--active-color);
+        background-color: var(--active-color);
+        transition: all 0.3s ease-in-out;
+
+        & .pagination_arrow {
+          background-color: var(--active-color);
+          transition: all 0.3s ease-in-out;
+        }
+      }
+    }
+
+    &:hover {
+      border-bottom: 1px solid var(--secondary-grey);
+
+      & .pagination_button {
+        font-weight: bold;
+      }
+    }
+  }
+
+  &_item:first-child &_button {
+    transform: rotate(180deg);
+  }
+
+  &_item:first-child &_button,
+  &_item:last-child &_button {
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: 24px;
+  }
+
+  &_button {
+    padding: 3px 8px;
+    border: 0px;
+    border-radius: 4px;
+    color: var(--light-grey);
+    font-size: 16px;
+    cursor: pointer;
+    background-color: var(--primary-color);
+    transition: all 0.3s ease-in-out;
+  }
+
+  &_arrow {
+    width: 16px;
+    height: 16px;
+    transition: background-color 0.3s ease-in-out;
+  }
+
+  &_selected {
+    font-weight: bold;
+    background-color: var(--active-color);
+    transition: background-color 0.3s ease-in-out;
+  }
+
+  html[data-theme="light"] &_item:first-child &_button {
+    background-image: url("../../assets/icons/lightArrow.svg");
+  }
+
+  html[data-theme="light"] &_item:last-child &_button {
+    background-image: url("../../assets/icons/lightArrow.svg");
+  }
+
+  html[data-theme="dark"] &_item:first-child &_button,
+  &_item:last-child &_button {
+    background-image: url("../../assets/icons/darkArrow.svg");
+  }
+}
+
+@media (max-width: 392px) {
+  .pagination {
+    margin-top: 30px;
+  }
+}

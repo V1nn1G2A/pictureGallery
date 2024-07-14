@@ -1,0 +1,116 @@
+.search {
+  position: relative;
+  width: 86%;
+
+  &_input {
+    width: 100%;
+    max-width: 336px;
+    min-width: 224px;
+    padding: 9px 12px 8px 48px;
+    box-sizing: border-box;
+    border: 1px solid;
+    border-radius: 4px;
+    outline: none;
+    background-color: var(--secondary-color);
+    color: var(--light-grey);
+    font-size: 16px;
+    line-height: 19.6px;
+    transition: all 0.3s ease-in-out;
+
+    &::placeholder {
+      font-size: 14px;
+      line-height: 19.6px;
+      word-spacing: 3px;
+      color: var(--secondary-grey);
+    }
+
+    &::-ms-clear {
+      display: none;
+      width: 0;
+      height: 0;
+    }
+
+    &::-webkit-search-cancel-button {
+      -webkit-appearance: none;
+      appearance: none;
+    }
+
+    &:focus,
+    &:not(:placeholder-shown) {
+      border: 1px solid var(--light-grey) !important;
+    }
+  }
+
+  html[data-theme="light"] &_input {
+    border-color: var(--primary-grey);
+  }
+
+  html[data-theme="dark"] &_input {
+    border-color: var(--secondary-color);
+  }
+
+  &_button,
+  &_clear {
+    position: absolute;
+    top: 52%;
+    transform: translateY(-50%);
+    border: none;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    background: none;
+    padding: 0;
+  }
+
+  &_button {
+    left: 10px;
+  }
+
+  &_clear {
+    right: 10px;
+  }
+
+  html[data-theme="light"] &_button {
+    background-image: url("../../assets/icons/lightSearch.png");
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+  }
+
+  html[data-theme="dark"] &_button {
+    background-image: url("../../assets/icons/darkSearch.png");
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+  }
+
+  &_svg {
+    fill: var(--light-grey);
+  }
+}
+
+@media (max-width: 768px) {
+  .search {
+    &_input {
+      padding: 8px 12px 7px 48px;
+    }
+  }
+}
+
+@media (max-width: 392px) {
+  .search {
+    &_clear {
+      display: none;
+    }
+    &_input {
+      font-size: 12px;
+
+      &::placeholder {
+        font-size: 12px;
+      }
+    }
+
+    &_input:focus &_clear,
+    &_input:not(:placeholder-shown) &_clear {
+      display: block;
+    }
+  }
+}

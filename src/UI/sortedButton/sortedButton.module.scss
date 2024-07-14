@@ -1,0 +1,38 @@
+.sortedButton {
+  background-color: var(--secondary-color);
+  border-radius: 4px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+
+  display: flex;
+  align-items: center;
+  padding: 11px 10px;
+
+  &_svg {
+    fill: var(--light-grey);
+  }
+
+  html[data-theme="dark"] &:hover {
+    background-color: #cdcdcd0d;
+
+    &_svg {
+      fill: var(--primary-color);
+    }
+  }
+
+  html[data-theme="light"] &:hover {
+    background-color: #1212120d;
+
+    &_svg {
+      fill: var(--primary-color);
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .sortedButton {
+    margin-left: 20px;
+  }
+}

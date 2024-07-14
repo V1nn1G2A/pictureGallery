@@ -1,0 +1,26 @@
+.sorted_row {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  background-color: var(--primary-color);
+  padding-bottom: 26px;
+}
+
+.sorted_label {
+  font-size: 16px;
+  font-weight: bold;
+  font-family: "Cormorant SC";
+  color: var(--text-color);
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    color: var(--light-grey);
+  }
+}
+
+@media (max-width: 392px) {
+  .sorted_label {
+    font-size: 12px;
+  }
+}

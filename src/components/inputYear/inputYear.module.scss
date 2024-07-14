@@ -1,0 +1,67 @@
+.inputYear {
+  position: relative;
+  z-index: -1;
+  margin-top: -40px;
+  transition: margin-top 0.3s ease-in-out;
+
+  &_active {
+    z-index: 1;
+    transition: all 0.3s ease-in-out;
+    margin-top: 0;
+  }
+
+  &_span {
+    margin: 0 12px;
+    font-size: 16px;
+    color: var(--light-grey);
+  }
+
+  &_input {
+    padding: 10px 14px;
+    border-radius: 4px;
+    border: 1px solid;
+    outline: none;
+    max-width: 35px;
+    width: 100%;
+    color: var(--light-grey);
+    background-color: var();
+
+    &::placeholder {
+      text-align: center;
+      font-size: 14px;
+      color: var(--secondary-grey);
+    }
+
+    &:focus,
+    &:not(:placeholder-shown) {
+      border: 1px solid var(--light-grey) !important;
+    }
+  }
+
+  html[data-theme="dark"] &_input {
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color);
+  }
+
+  html[data-theme="light"] &_input {
+    background-color: var(--primary-color);
+    border-color: var(--secondary-color);
+  }
+}
+
+@media (max-width: 392px) {
+  .inputYear {
+    &_span {
+      font-size: 12px;
+    }
+
+    &_input {
+      font-size: 12px;
+      margin-top: 2px;
+
+      &::placeholder {
+        font-size: 12px;
+      }
+    }
+  }
+}
