@@ -34,6 +34,11 @@
       -webkit-appearance: none;
       appearance: none;
     }
+
+    &:focus {
+      border: 1px solid var(--light-grey);
+      transition: all 0.3s ease-in-out;
+    }
   }
 
   html[data-theme="light"] &_input {
