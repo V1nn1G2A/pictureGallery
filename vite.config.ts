@@ -11,7 +11,7 @@ export default defineConfig({
       inject: {
         data: {
           title: 'Picture Gallery',
-          favicon: '/public/favicon.png',
+          favicon: 'favicon.png',
         },
       },
     }),
