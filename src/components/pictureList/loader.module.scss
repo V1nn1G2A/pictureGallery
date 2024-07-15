@@ -1,7 +1,6 @@
 .loader {
   overflow: hidden;
   font-size: 10px;
-  margin: 50px auto;
   text-indent: -9999em;
   width: 11em;
   height: 11em;
@@ -63,5 +62,20 @@
   100% {
     -webkit-transform: rotate(360deg);
     transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 768px) {
+  .loader {
+    width: 9em;
+    height: 9em;
+    left: 45%;
+  }
+}
+
+@media (max-width: 392px) {
+  .loader {
+    width: 6em;
+    height: 6em;
   }
 }

@@ -13,17 +13,25 @@ import styles from './pictureList.module.scss';
 import loader from './loader.module.scss';
 import container from '../../index.module.scss';
 
-import { setArtist, setLocation, setYearFrom, setYearTo, setFindString } from '../../store/reducers/sortedSlice';
+import {
+  setArtist,
+  setLocation,
+  setYearFrom,
+  setYearTo,
+  setFindString,
+} from '../../store/reducers/sortedSlice';
 
 function PictureList() {
   const dispatch = useAppDispatch();
 
-  const currentPage = useAppSelector(state => state.paginationReducer.currentPage);
-  const findString = useAppSelector(state => state.sortedReducer.findString);
-  const artist = useAppSelector(state => state.sortedReducer.artist);
-  const location = useAppSelector(state => state.sortedReducer.location);
-  const yearFrom = useAppSelector(state => state.sortedReducer.yearFrom);
-  const yearTo = useAppSelector(state => state.sortedReducer.yearTo);
+  const currentPage = useAppSelector(
+    (state) => state.paginationReducer.currentPage
+  );
+  const findString = useAppSelector((state) => state.sortedReducer.findString);
+  const artist = useAppSelector((state) => state.sortedReducer.artist);
+  const location = useAppSelector((state) => state.sortedReducer.location);
+  const yearFrom = useAppSelector((state) => state.sortedReducer.yearFrom);
+  const yearTo = useAppSelector((state) => state.sortedReducer.yearTo);
 
   const limit = 6;
 
@@ -92,22 +100,27 @@ function PictureList() {
               No matches for{' '}
               <button
                 className={styles.noMatches_findString}
-                type='button'
+                type="button"
                 onClick={handleClickEnter}
-                onKeyPress={event => {
+                onKeyPress={(event) => {
                   if (event.key === 'Enter') {
                     handleClickEnter();
                   }
-                }}
-              >
+                }}>
                 {findString === '' ? 'your classification' : findString}
               </button>
             </p>
-            <p className={styles.noMatches_tryAgain}>Please try again with a different spelling or keywords.</p>
+            <p className={styles.noMatches_tryAgain}>
+              Please try again with a different spelling or keywords.
+            </p>
           </div>
         )}
       </ul>
-      <Pagination totalCount={data.totalCount} currentPage={currentPage} pageSize={6} />
+      <Pagination
+        totalCount={data.totalCount}
+        currentPage={currentPage}
+        pageSize={6}
+      />
     </div>
   );
 }
