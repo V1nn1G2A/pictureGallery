@@ -34,10 +34,6 @@
       -webkit-appearance: none;
       appearance: none;
     }
-
-    &:focus-visible {
-      border-color: var(--light-grey);
-    }
   }
 
   html[data-theme="light"] &_input {
