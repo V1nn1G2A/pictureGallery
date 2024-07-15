@@ -35,7 +35,8 @@
       appearance: none;
     }
 
-    &:focus {
+    &:focus,
+    &:not(:placeholder-shown) {
       border: 1px solid var(--light-grey);
       transition: all 0.3s ease-in-out;
     }
