@@ -35,9 +35,8 @@
       appearance: none;
     }
 
-    &:focus,
-    &:not(:placeholder-shown) {
-      border: 1px solid var(--light-grey) !important;
+    &:focus {
+      border: 1px solid var(--light-grey);
     }
   }
 
